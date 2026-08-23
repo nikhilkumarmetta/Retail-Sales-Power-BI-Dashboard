@@ -1,6 +1,6 @@
 # Retail Sales Performance Dashboard | Power BI
 
-## Project Overview
+## Project Overview 
 
 This project is an interactive Retail Sales Performance Dashboard developed in Microsoft Power BI to analyze sales, profitability, customer segments, products, and regional performance.
 

@@ -1,110 +1,185 @@
 # Retail Sales Performance Dashboard | Power BI
 
-## Project Overview 
+## Project Overview
 
-This project is an interactive Retail Sales Performance Dashboard developed in Microsoft Power BI to analyze sales, profitability, customer segments, products, and regional performance.
+This project is an interactive **Retail Sales Performance Dashboard** developed in Microsoft Power BI to analyze sales, profitability, customer segments, product performance, and regional trends.
 
-The dashboard transforms retail transaction data into actionable business insights and allows users to interactively explore performance across different dimensions.
+The dashboard combines data modeling, DAX, time-intelligence calculations, dynamic parameters, drill-through analysis, tooltips, bookmarks, and interactive filtering to provide an executive-level view of retail performance.
+
+---
 
 ## Dashboard Preview
 
-![Retail Sales Dashboard](Retail_Sales_Dashboard.png)
+![Retail Sales Performance Dashboard](Retail_Sales_Dashboard.png)
 
-## Key Performance Indicators
+---
 
-- Total Sales: $26.76M
-- Total Profit: $9.80M
-- Profit Margin: 36.63%
-- Total Orders: 15K
-- Total Quantity Sold: 53K
+## Dashboard Pages
 
-## Dashboard Features
+### 1. Executive Dashboard
 
-- Executive-level KPI cards
-- Sales and profit analysis
-- Quarterly sales trends
-- Category performance analysis
-- Customer segment analysis
-- Regional and state-level sales analysis
-- Top-performing product analysis
-- Date range filtering
-- Category and region slicers
-- Drill-through product analysis
-- Report page tooltips
-- Bookmark-based Sales and Profit views
+The Executive Dashboard provides a high-level view of business performance through key performance indicators and interactive visualizations.
+
+Key KPIs include:
+
+- Total Sales
+- Total Profit
+- Profit Margin %
+- Total Orders
+- Total Quantity
+- Sales Growth %
+
+The dashboard also includes:
+
+- Current Year vs Previous Year monthly sales analysis
+- Profit analysis by product category
+- Sales performance by region
+- Customer segment contribution
+- Dynamic Top N state analysis
+- Dynamic Top N product analysis
+- Region, Category, and Year filters
+
+---
+
+### 2. Product Details
+
+The Product Details page provides deeper product-level analysis and allows users to drill through from the Executive Dashboard to investigate individual product performance.
+
+---
+
+### 3. Product Tooltip
+
+A custom report-page tooltip provides additional contextual information when users hover over dashboard visuals without leaving the Executive Dashboard.
+
+---
+
+## Advanced Interactive Features
+
+### Dynamic Metric Selector
+
+Users can dynamically switch the analysis between:
+
+- Total Sales
+- Total Profit
+- Total Orders
+- Total Quantity
+
+The selected metric automatically updates the relevant charts and titles.
+
+### Dynamic Top N Analysis
+
+A What-If parameter allows users to switch between:
+
+- Top 5
+- Top 10
+- Top 15
+
+The ranking dynamically responds to the selected business metric.
+
+### Year-over-Year Analysis
+
+Time-intelligence measures compare current performance against the previous year, helping identify positive and negative business trends.
+
+### Drill-Through Analysis
+
+Users can navigate from summary-level visuals to detailed product analysis while preserving the relevant filter context.
+
+### Custom Tooltips
+
+Report-page tooltips provide additional insights without overcrowding the main dashboard.
+
+### Reset Filters
+
+A bookmark-based Reset Filters button restores the dashboard to its default analytical view.
+
+---
 
 ## Data Model
 
-The Power BI data model contains three primary tables:
+The Power BI data model uses a structured analytical model containing:
 
-- **Sales** – Transaction-level sales information
-- **Products** – Product, category, subcategory, cost, and pricing information
-- **Customers** – Customer, segment, region, and state information
+- Sales
+- Products
+- Customers
+- Date Table
+- Metric Selector
+- Top N Parameter
 
-Relationships were created between the Sales fact table and the Product and Customer dimension tables using Product_ID and Customer_ID.
+A dedicated Date Table supports time-intelligence calculations and year-over-year analysis.
 
-## DAX Measures
+---
 
-Key measures created for the dashboard include:
+## DAX & Analytics
 
-```DAX
-Total Sales =
-SUM(sales[Sales_Amount])
-```
+The project uses DAX measures for calculations including:
 
-```DAX
-Total Cost =
-SUMX(
-    sales,
-    sales[Quantity] * RELATED(products[Unit_Cost])
-)
-```
+- Total Sales
+- Total Profit
+- Profit Margin %
+- Total Orders
+- Total Quantity
+- Previous Year Sales
+- Sales Growth %
+- Previous Year Profit
+- Profit Growth %
+- Dynamic ranking
+- Top N filtering
+- Dynamic titles and analysis text
 
-```DAX
-Total Profit =
-[Total Sales] - [Total Cost]
-```
+---
 
-```DAX
-Profit Margin % =
-DIVIDE([Total Profit], [Total Sales], 0)
-```
+## Tools & Technologies
 
-Additional measures were created for Total Orders and Total Quantity.
+- Microsoft Power BI Desktop
+- Power Query
+- DAX
+- Data Modeling
+- Field Parameters
+- What-If Parameters
+- Bookmarks
+- Drill-Through
+- Report Page Tooltips
+- GitHub
+
+---
 
 ## Business Questions Answered
 
 The dashboard helps answer questions such as:
 
-- What are the company's total sales and profit?
-- What is the overall profit margin?
-- Which products generate the most sales?
-- Which categories are the most profitable?
-- Which customer segments contribute the most revenue?
-- Which states and regions perform best?
-- How does sales performance change across quarters?
-- How do selected categories, regions, and dates affect overall performance?
+- How are sales performing compared with the previous year?
+- Which product categories generate the most profit?
+- Which regions contribute the most sales?
+- Which customer segments drive revenue?
+- What are the Top 5, Top 10, or Top 15 states by a selected KPI?
+- Which products perform best by sales, profit, orders, or quantity?
+- How does product performance change across different years, categories, and regions?
 
-## Tools & Skills
+---
 
-- Microsoft Power BI
-- DAX
-- Data Modeling
-- Data Visualization
-- KPI Development
-- Interactive Dashboards
-- Slicers and Filters
-- Drill-through
-- Report Page Tooltips
-- Bookmarks
-- Business Intelligence
-- Data Analysis
+## Key Skills Demonstrated
 
-## Project Files
+This project demonstrates practical experience in:
 
-- `Retail_Sales_Performance_Dashboard.pbix` – Power BI project
-- `Retail_Sales_Dashboard.png` – Dashboard preview
+**Power BI Development | DAX | Power Query | Data Modeling | Data Visualization | Business Intelligence | KPI Development | Time Intelligence | Dynamic Parameters | Drill-Through | Interactive Dashboard Design**
 
-## Dashboard
+---
 
-The dashboard was designed to provide business stakeholders with a concise executive view of retail performance while allowing deeper analysis of products, customers, geography, and profitability.
+## Future Enhancements
+
+Potential future enhancements include:
+
+- Geographic map analysis
+- Sales forecasting
+- Automated refresh through Power BI Service
+- Additional profitability analysis
+- Customer-level segmentation
+- Mobile dashboard optimization
+
+---
+
+## Author
+
+**Nikhil Kumar Metta**
+
+Power BI | Data Analytics | Business Intelligence
